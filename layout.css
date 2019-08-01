@@ -1,0 +1,66 @@
+/* Reset margin and padding */
+*{
+    margin:0;
+    padding:0;
+}
+/* Make the body a grid container and create the mobile layout */
+body{
+    display: grid;
+    height:100vh;
+    grid-template-columns: 100%;
+    grid-gap:.25rem;
+    grid-template-rows: 3fr 2fr 4fr 4fr 2fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "articleOne"
+        "articleTwo"   
+        "footer"; 
+}
+/* Assign Grid Areas to the Elements */
+header{
+    grid-area: header;
+}
+nav{
+    grid-area:nav;
+}
+nav>ul{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+article.firstArticle{
+    grid-area: articleOne;
+}
+article.secondArticle{
+    grid-area: articleTwo;
+}
+
+
+footer{
+    grid-area: footer;
+}
+
+/* BREAK POINT: FIRST BREAK POINT */
+
+@media only screen and (min-width: 500px){
+    body{
+        display: grid;
+        height:100vh;
+        grid-template-columns:1fr 1fr;
+        grid-gap:.25rem;
+        grid-template-rows:2fr 1fr 4fr 1.25fr;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "articleOne articleTwo"
+            "articleOne articleTwo"
+            "footer footer";
+    }
+    nav>ul{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+   
+}
+
+
