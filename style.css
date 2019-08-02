@@ -1,25 +1,30 @@
 /* Set the variables for site colors fonts and borders */
 :root{
     /* colors */
-    --headerBackgroundImage: url("hartford.jpeg");
-    --headerBackgroundColor:slategrey;
+    --headerBackgroundImage: url("photos/hartford.jpeg");
+    --headerBackgroundColor:rgba(43,90,117,1);
     --headerColor:white;
-    --navBackgroundColor: black;
-    --navColor:white ;
-    --mainBackgroundColor: lightgrey;
+    --navBackgroundColor: rgba(0,172,21,1);
+    --navColor:rgba(43,90,117,1);
+    --navTextShadow: 1px 1px 1px white;
+    --mainBackgroundColor: rgba(196,196,196,1);
     --articleBackgroundColor: whitesmoke;
     --articleColor:black;
+    --titleBackgroundColor: rgba(230,179,83,1);
     /* fonts */
     --headingsFont: ;
     /* borders */
     --headerBorder: 1px solid black;
     --standardBorder:1px solid black;
-    --navBorder:1px solid white;
+    --navBorder:1px solid black;
     
     
 }
 
 /* Style the elements */
+body{
+    background-color: var(--mainBackgroundColor);
+}
 header{
     background-image: var(--headerBackgroundImage);
     background-size: cover;
@@ -30,19 +35,49 @@ header{
     color:var(--headerColor);
 }
 header h1{
+    background-color: var(--titleBackgroundColor);
+    box-sizing: border-box;
     text-align: center;
+    color:var(--navColor);
+    text-shadow: 1px 1px 1px white;
 }
 nav{
     background-color: var(--navBackgroundColor);
+    border: var(--navBorder);
     box-sizing: border-box;
     color:var(--navColor);
     overflow: auto;
+    text-shadow:var(--navTextShadow);
 }
 nav ul{
     box-sizing: border-box;
     list-style-type: none;
 }
+nav li{
+    box-sizing: border-box;   
+}
 nav a{
     color: inherit;
     text-decoration: none;
+}
+article{
+    background-color: whitesmoke;
+    border:1px solid black;
+    padding:1rem;
+    overflow: scroll;
+}
+h2{
+    text-align: center;
+}
+p{
+    text-align: justify;
+}
+footer{
+    background-color: var(--navBackgroundColor);
+}
+footer a{
+    color:var(--navColor);
+    text-decoration: none;
+    text-shadow: var(--navTextShadow);
+    padding:1rem;
 }
